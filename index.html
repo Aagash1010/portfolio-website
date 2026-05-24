@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harikaran Aagash | Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Harikaran Aagash, a Front-End Developer transitioning to Full Stack. Showcasing projects, skills, and creativity."
+    />
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <header class="header">
+      <a href="#hero" class="logo">HA<span class="highlight">.</span></a>
+
+      <nav class="navbar">
+        <a href="#about" class="nav-link">About Aagash</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link btn-primary">Contact Me</a>
+      </nav>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero">
+        <div class="container hero-container">
+          <div class="hero-content fade-in-up">
+            <div class="greeting-box">
+              <span class="greeting-emoji">👋</span>
+              <span id="greeting-text">Hello, I'm</span>
+            </div>
+            <h1 class="hero-title">
+              Harikaran <span class="gradient-text">Aagash</span>
+            </h1>
+            <h2 class="hero-subtitle">
+              Front-End Developer <span class="divider">|</span> Aspiring
+              <span class="highlight">Full Stack</span>
+            </h2>
+            <p class="hero-description">
+              Crafting pixel-perfect, premium web experiences. I blend technical
+              expertise with creative design to build websites that not only
+              work seamlessly but look stunning.
+            </p>
+            <div class="hero-btns">
+              <a href="#projects" class="btn btn-filled"
+                >View My Work <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="#contact" class="btn btn-outline">Let's Talk</a>
+            </div>
+            <div class="social-links">
+              <a href="#" target="_blank" aria-label="GitHub"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="#" target="_blank" aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a href="#" target="_blank" aria-label="Twitter"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="mailto:aagash1004@gmail.com" aria-label="Email"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+            </div>
+          </div>
+
+          <div
+            class="hero-image-wrapper fade-in-up"
+            style="animation-delay: 0.2s"
+          >
+            <div class="hero-image-blob"></div>
+            <div class="hero-image-box">
+              <img
+                src="./assets/images/profile-cool.jpg"
+                alt="Harikaran Aagash"
+                class="profile-img"
+              />
+            </div>
+            <!-- Floating Tech Badges -->
+            <div class="floating-badge badge-1">
+              <i class="fa-brands fa-react"></i>
+            </div>
+            <div class="floating-badge badge-2">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <div class="floating-badge badge-3">
+              <i class="fa-solid fa-code"></i>
+            </div>
+          </div>
+        </div>
+
+        <a href="#about" class="scroll-down">
+          <span class="mouse">
+            <span class="wheel"></span>
+          </span>
+          <span class="arrow"><i class="fa-solid fa-chevron-down"></i></span>
+        </a>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section about">
+        <div class="container">
+          <div class="section-header fade-in">
+            <span class="section-tag">Who I Am</span>
+            <h2 class="section-title">About Me</h2>
+          </div>
+
+          <div class="about-content">
+            <div class="about-text fade-in-up">
+              <p>
+                I'm <strong class="highlight">Harikaran Aagash</strong>, a
+                passionate Front-End Developer currently expanding my horizons
+                into the world of Back-End development to become a complete Full
+                Stack Engineer.
+              </p>
+              <p>
+                My journey began with a love for visual design and code. I
+                specialize in building responsive, accessible, and performant
+                web applications. I believe that a great website should be a
+                harmony of logic and aesthetics.
+              </p>
+              <p>
+                When I'm not coding, you can find me exploring new design
+                trends, optimizing performance, or learning the latest
+                technologies in the web ecosystem.
+              </p>
+
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-number">2+</span>
+                  <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">10+</span>
+                  <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Client Satisfaction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section skills">
+        <div class="container">
+          <div class="section-header fade-in">
+            <span class="section-tag">My Arsenal</span>
+            <h2 class="section-title">Tech Stack</h2>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Front End -->
+            <div class="skill-category fade-in-up">
+              <h3><i class="fa-solid fa-laptop-code"></i> Front-End</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript (ES6+)</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Tailwind CSS</span>
+                <span class="skill-tag">SCSS</span>
+              </div>
+            </div>
+
+            <!-- Back End -->
+            <div
+              class="skill-category fade-in-up"
+              style="animation-delay: 0.1s"
+            >
+              <h3><i class="fa-solid fa-server"></i> Back-End (Learning)</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">API Design</span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div
+              class="skill-category fade-in-up"
+              style="animation-delay: 0.2s"
+            >
+              <h3><i class="fa-solid fa-toolbox"></i> Tools</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Postman</span>
+                <span class="skill-tag">Vercel/Netlify</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section projects">
+        <div class="container">
+          <div class="section-header fade-in">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">Featured Projects</h2>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card fade-in-up">
+              <div class="project-image">
+                <!-- Placeholder for project image -->
+                <div class="project-img-placeholder gradient-1"></div>
+                <div class="project-overlay">
+                  <a href="#" class="btn-icon" aria-label="View Code"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                  <a href="#" class="btn-icon" aria-label="Live Demo"
+                    ><i class="fa-solid fa-external-link-alt"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Leela Bakery Online Shop</h3>
+                <p class="project-desc">
+                  An animated, user-friendly online shop for "Leela Bakery"
+                  featuring a Christmas-themed design.
+                </p>
+                <div class="project-tech">
+                  <span>HTML/CSS</span>
+                  <span>Animations</span>
+                  <span>JavaScript</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article
+              class="project-card fade-in-up"
+              style="animation-delay: 0.1s"
+            >
+              <div class="project-image">
+                <div class="project-img-placeholder gradient-2"></div>
+                <div class="project-overlay">
+                  <a href="#" class="btn-icon" aria-label="View Code"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                  <a href="#" class="btn-icon" aria-label="Live Demo"
+                    ><i class="fa-solid fa-external-link-alt"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Real Weather App</h3>
+                <p class="project-desc">
+                  A live weather tracking application built with a focus on
+                  clean folder structure and Vanilla JS.
+                </p>
+                <div class="project-tech">
+                  <span>JavaScript</span>
+                  <span>OpenWeather API</span>
+                  <span>CSS3</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article
+              class="project-card fade-in-up"
+              style="animation-delay: 0.2s"
+            >
+              <div class="project-image">
+                <div class="project-img-placeholder gradient-3"></div>
+                <div class="project-overlay">
+                  <a href="#" class="btn-icon" aria-label="View Code"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                  <a href="#" class="btn-icon" aria-label="Live Demo"
+                    ><i class="fa-solid fa-external-link-alt"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Luxmy Billing App</h3>
+                <p class="project-desc">
+                  A comprehensive billing application with printable invoices,
+                  daily summaries, and category management.
+                </p>
+                <div class="project-tech">
+                  <span>LocalStorage</span>
+                  <span>Print Layouts</span>
+                  <span>JavaScript</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact">
+        <div class="container">
+          <div class="contact-wrapper fade-in-up">
+            <div class="contact-info">
+              <span class="section-tag">Get in Touch</span>
+              <h2 class="section-title">Let's Work Together</h2>
+              <p>
+                I'm currently available for freelance projects and full-time
+                opportunities. If you have a project that needs some creative
+                touch, let's chat!
+              </p>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>aagash1004@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>075-775-3783</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Colombo, Sri Lanka</span>
+                </div>
+              </div>
+
+              <div class="social-links big-socials">
+                <a href="#" target="_blank"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+                <a href="#" target="_blank"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+                <a href="#" target="_blank"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+                <a href="#" target="_blank"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" id="name" required placeholder=" " />
+                <label for="name">Your Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" required placeholder=" " />
+                <label for="email">Your Email</label>
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  rows="5"
+                  required
+                  placeholder=" "
+                ></textarea>
+                <label for="message">Your Message</label>
+              </div>
+              <button type="submit" class="btn btn-filled">
+                Send Message <i class="fa-regular fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Harikaran Aagash. All rights reserved.</p>
+        <p class="made-with">
+          Made with <i class="fa-solid fa-heart"></i> and
+          <i class="fa-solid fa-code"></i>
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
