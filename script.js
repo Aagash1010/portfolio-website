@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Dynamic Greeting ---
   const greetingText = document.getElementById("greeting-text");
   const hour = new Date().getHours();
   let greeting;
