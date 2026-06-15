@@ -147,6 +147,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      const name = document.getElementById("name")?.value.trim() || "Visitor";
+      const email = document.getElementById("email")?.value.trim() || "Not provided";
+      const message = document.getElementById("message")?.value.trim() || "";
+      const subject = encodeURIComponent(`Portfolio message from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+      );
+
       contactForm.classList.remove("sent");
       void contactForm.offsetWidth;
       contactForm.classList.add("sent");
@@ -159,6 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
           submitButton.innerHTML = originalText;
         }, 1600);
       }
+
+      window.location.href = `mailto:aagashhari5@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 });
