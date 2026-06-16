@@ -1,3 +1,24 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import {
+  addDoc,
+  collection,
+  getFirestore,
+  serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAMPs9fwLa3lCY6AnxnYo-1GXXeCMCVllA",
+  authDomain: "portfolio-aagash.firebaseapp.com",
+  projectId: "portfolio-aagash",
+  storageBucket: "portfolio-aagash.firebasestorage.app",
+  messagingSenderId: "65859568127",
+  appId: "1:65859568127:web:1c367f8cdcf416314ea7ca",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const contactMessagesRef = collection(db, "contactMessages");
+
 document.addEventListener("DOMContentLoaded", () => {
   // --- Custom Cursor ---
   const cursorDot = document.querySelector("[data-cursor-dot]");
@@ -145,6 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.querySelector(".contact-form");
 
   if (contactForm) {
+    const formStatus = contactForm.querySelector(".form-status");
+
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = document.getElementById("name")?.value.trim() || "Visitor";
@@ -157,19 +180,31 @@ document.addEventListener("DOMContentLoaded", () => {
       void contactForm.offsetWidth;
 
       try {
+        if (formStatus) {
+          formStatus.textContent = "Sending your message...";
+          formStatus.className = "form-status";
+        }
+
         if (submitButton) {
           submitButton.disabled = true;
           submitButton.innerHTML =
             'Sending <i class="fa-solid fa-spinner fa-spin"></i>';
         }
 
-        if (typeof window.saveContactMessage !== "function") {
-          throw new Error("Firebase contact service is not ready.");
-        }
-
-        await window.saveContactMessage({ name, email, message });
+        await addDoc(contactMessagesRef, {
+          name,
+          email,
+          message,
+          recipientEmail: "aagashhari5@gmail.com",
+          createdAt: serverTimestamp(),
+        });
         contactForm.classList.add("sent");
         contactForm.reset();
+
+        if (formStatus) {
+          formStatus.textContent = "Message sent successfully.";
+          formStatus.className = "form-status success";
+        }
 
         if (submitButton) {
           submitButton.innerHTML = 'Sent <i class="fa-solid fa-check"></i>';
@@ -180,6 +215,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       } catch (error) {
         console.error("Contact form submit failed:", error);
+
+        if (formStatus) {
+          formStatus.textContent =
+            "Message was not sent. Check Firebase Firestore and rules.";
+          formStatus.className = "form-status error";
+        }
 
         if (submitButton) {
           submitButton.innerHTML =
