@@ -215,21 +215,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       } catch (error) {
         console.error("Contact form submit failed:", error);
+        const subject = encodeURIComponent(`Portfolio message from ${name}`);
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        );
 
         if (formStatus) {
           formStatus.textContent =
-            "Message was not sent. Check Firebase Firestore and rules.";
-          formStatus.className = "form-status error";
+            "Firebase is unavailable. Opening your email app instead.";
+          formStatus.className = "form-status";
         }
 
         if (submitButton) {
-          submitButton.innerHTML =
-            'Try Again <i class="fa-solid fa-triangle-exclamation"></i>';
+          submitButton.innerHTML = 'Opening Email <i class="fa-solid fa-envelope"></i>';
           submitButton.disabled = false;
           setTimeout(() => {
             submitButton.innerHTML = originalText;
           }, 2200);
         }
+
+        window.location.href = `mailto:aagashhari5@gmail.com?subject=${subject}&body=${body}`;
       }
     });
   }
