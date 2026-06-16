@@ -145,30 +145,51 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.querySelector(".contact-form");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = document.getElementById("name")?.value.trim() || "Visitor";
       const email = document.getElementById("email")?.value.trim() || "Not provided";
       const message = document.getElementById("message")?.value.trim() || "";
-      const subject = encodeURIComponent(`Portfolio message from ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-      );
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitButton?.innerHTML;
 
       contactForm.classList.remove("sent");
       void contactForm.offsetWidth;
-      contactForm.classList.add("sent");
 
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      if (submitButton) {
-        const originalText = submitButton.innerHTML;
-        submitButton.innerHTML = 'Sent <i class="fa-solid fa-check"></i>';
-        setTimeout(() => {
-          submitButton.innerHTML = originalText;
-        }, 1600);
+      try {
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.innerHTML =
+            'Sending <i class="fa-solid fa-spinner fa-spin"></i>';
+        }
+
+        if (typeof window.saveContactMessage !== "function") {
+          throw new Error("Firebase contact service is not ready.");
+        }
+
+        await window.saveContactMessage({ name, email, message });
+        contactForm.classList.add("sent");
+        contactForm.reset();
+
+        if (submitButton) {
+          submitButton.innerHTML = 'Sent <i class="fa-solid fa-check"></i>';
+          setTimeout(() => {
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+          }, 1600);
+        }
+      } catch (error) {
+        console.error("Contact form submit failed:", error);
+
+        if (submitButton) {
+          submitButton.innerHTML =
+            'Try Again <i class="fa-solid fa-triangle-exclamation"></i>';
+          submitButton.disabled = false;
+          setTimeout(() => {
+            submitButton.innerHTML = originalText;
+          }, 2200);
+        }
       }
-
-      window.location.href = `mailto:aagashhari5@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 });
